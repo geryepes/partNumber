@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Leter:</strong>
+  <%= @part.leter %>
+</p>
+
+<p>
+  <strong>Nro:</strong>
+  <%= @part.nro.to_s.rjust(7, '0') %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @part.title %>
+</p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @part.reference %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @part.model.name %>
+</p>
+
+<%= link_to 'Revisions', part_revisions_path(@part) %> |
+<%= link_to 'Edit', edit_part_path(@part) %> |
+<%= link_to 'Back', parts_path %>

@@ -1,0 +1,13 @@
+	<div style="position: absolute; top: 0px ;left: calc((100% - 900px)/2); height: 210px; width: 900px;border-bottom-style: solid;  background-color: red" align="center">
+		<br><br><br>
+		<h1>Editing part</h1>
+	</div>
+	<div style="position: absolute; top: 213px; left: calc((100% - 900px)/2); padding: 0px ;height: calc(100% - 280px); width: 900px; background-color: grey; " align="center">
+		<div style="margin-left: 300px ;text-align: left" align="left">
+			<%= render 'form' %>
+		</div>
+	</div>
+	<div align="center" style="position: absolute; left: calc((100% - 900px)/2) ;bottom: 0px; height: 70px; width: 900px; background-color: red; border-top-style: solid">
+		<%= link_to 'Show', @part %> |
+		<%= link_to 'Back', parts_path %>
+	</div>

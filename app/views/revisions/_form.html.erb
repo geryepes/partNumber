@@ -1,0 +1,39 @@
+<%= form_for([@revision.part, @revision]) do |f| %>
+  <% if @revision.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@revision.errors.count, "error") %> prohibited this revision from being saved:</h2>
+
+      <ul>
+      <% @revision.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :autor %><br>
+    <%= f.text_field :autor %>
+  </div>
+  <!--
+  <div class="field">
+    <%= f.label :nro %><br>
+    <%= f.number_field :nro %>
+  </div>
+  -->
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.date_select :fecha %>
+  </div>
+  <div class="field">
+    <%= f.label :state_id %><br>
+    <%= f.collection_select :state_id, State.order(:name),:id,:name, include_blank: false %>
+  </div>
+  <div class="field">
+    <%= f.label :part_id %><br>
+    <%= f.collection_select :part_id, Part.order(:title),:id,:title, include_blank: false %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

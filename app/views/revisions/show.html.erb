@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Autor:</strong>
+  <%= @revision.autor %>
+</p>
+
+<p>
+  <strong>Nro:</strong>
+  <%= @revision.nro %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @revision.fecha %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @revision.state.name %>
+</p>
+
+<p>
+  <strong>Part:</strong>
+  <%= @revision.part.leter + @revision.part.nro.to_s.rjust(7, '0') %>
+</p>
+
+<%= link_to 'Edit', edit_part_revision_path(@revision.part, @revision) %> |
+<%= link_to 'Back', part_revisions_path(@revision.part) %>
